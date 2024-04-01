@@ -35,24 +35,24 @@ const MenuDropdown = () => {
                 </div>
             </div>
             {isOpen && (
-                <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm'>
+                <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-green-100 overflow-hidden right-0 top-12 text-sm'>
                     <div className='flex flex-col cursor-pointer'>
                         <Link
                             to='/'
-                            className='block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                            className='block md:hidden px-4 py-3 hover:bg-green-200 transition font-semibold'
                         >
                             Home
                         </Link>
 
                         <Link
                             to='/login'
-                            className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                            className='px-4 py-3 hover:bg-green-200 transition font-semibold'
                         >
                             Login
                         </Link>
                         <Link
                             to='/signup'
-                            className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                            className='px-4 py-3 hover:bg-green-200 transition font-semibold'
                         >
                             Sign Up
                         </Link>

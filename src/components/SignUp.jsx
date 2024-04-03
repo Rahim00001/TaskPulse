@@ -14,8 +14,9 @@ const SignUp = () => {
         e.preventDefault()
         Axios.post('http://localhost:5000/auth/signup', { username, email, password })
             .then(response => {
-                console.log(response);
-                navigate('/login')
+                if (response.data.status) {
+                    navigate('/login')
+                }
             }).catch(err => {
                 console.log(err);
             })

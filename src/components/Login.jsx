@@ -56,9 +56,11 @@ const Login = () => {
                     </div>
                 </form>
                 <div className='space-y-1'>
-                    <button className='text-xs hover:underline hover:text-green-400 text-gray-400 mb-4'>
-                        Forgot password?
-                    </button>
+                    <Link to='/forgotPassword'>
+                        <button className='text-xs hover:underline hover:text-green-400 text-gray-400 mb-4'>
+                            Forgot password?
+                        </button>
+                    </Link>
                 </div>
                 <p className='px-6 text-sm text-center text-gray-400'>
                     Don&apos;t have an account yet?{' '}

@@ -9,9 +9,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './components/Home';
-import SignUp from './components/SignUp';
-import Login from './components/Login';
-import ForgotPassword from './components/ForgotPassword'
+import SignUp from './components/Pages/SignUp';
+import Login from './components/Pages/Login';
+import ForgotPassword from './components/Pages/ForgotPassword'
+import ResetPassword from './components/Pages/ResetPassword';
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
       {
         path: '/forgotPassword',
         element: <ForgotPassword></ForgotPassword>
-      }
+      },
+      {
+        path: '/resetPassword/:token',
+        element: <ResetPassword></ResetPassword>
+      },
     ]
   },
 ]);

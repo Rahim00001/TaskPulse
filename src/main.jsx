@@ -13,6 +13,7 @@ import SignUp from './components/Pages/SignUp';
 import Login from './components/Pages/Login';
 import ForgotPassword from './components/Pages/ForgotPassword'
 import ResetPassword from './components/Pages/ResetPassword';
+import DashboardLayout from './Layout/DashboardLayout';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         path: '/resetPassword/:token',
         element: <ResetPassword></ResetPassword>
       },
+      {
+        path: '/dashboard',
+        element: <DashboardLayout></DashboardLayout>
+      }
     ]
   },
 ]);

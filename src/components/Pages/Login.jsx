@@ -14,6 +14,7 @@ const Login = () => {
             .then(response => {
                 if (response.data.status) {
                     navigate('/')
+                    console.log('login successfully');
                 }
             }).catch(err => {
                 console.log(err);

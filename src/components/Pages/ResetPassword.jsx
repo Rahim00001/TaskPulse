@@ -1,20 +1,21 @@
 import { useState } from 'react'
 import Axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const ResetPassword = () => {
     const [password, setPassword] = useState('')
+    const { token } = useParams();
 
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        Axios.post('http://localhost:5000/auth/reset-password', { password })
+        Axios.post('http://localhost:5000/auth/reset-password/' + token, { password })
             .then(response => {
                 if (response.data.status) {
-                    console.log('reset button clicked');
                     navigate('/login')
                 }
+                console.log(response.data.message);
             }).catch(err => {
                 console.log(err);
             })

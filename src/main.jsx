@@ -25,14 +25,6 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: '/signup',
-        element: <SignUp></SignUp>
-      },
-      {
-        path: '/login',
-        element: <Login></Login>
-      },
-      {
         path: '/forgotPassword',
         element: <ForgotPassword></ForgotPassword>
       },
@@ -40,12 +32,21 @@ const router = createBrowserRouter([
         path: '/resetPassword/:token',
         element: <ResetPassword></ResetPassword>
       },
-      {
-        path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>
-      }
     ]
   },
+  {
+    path: '/signup',
+    element: <SignUp></SignUp>
+  },
+  {
+    path: '/login',
+    element: <Login></Login>
+  },
+  {
+    path: '/dashboard',
+    element: <DashboardLayout></DashboardLayout>
+  }
+
 ]);
 
 

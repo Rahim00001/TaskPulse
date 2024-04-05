@@ -16,7 +16,7 @@ const DashboardLayout = () => {
                 }
                 console.log(res);
             })
-    }, [])
+    }, [navigate])
     return (
         <div className='relative min-h-screen md:flex'>
             {/* Sidebar Component */}

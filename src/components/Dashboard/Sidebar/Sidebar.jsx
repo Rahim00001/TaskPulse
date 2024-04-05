@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import Axios from 'axios'
 // Components
 import MenuItem from './MenuItem'
 // Icons
@@ -9,13 +11,28 @@ import { BsGraphUp } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import logo from "../../../assets/Images/taskpulse.png"
 
+
 const Sidebar = () => {
     const [isActive, setActive] = useState(true)
-
+    const navigate = useNavigate();
+    Axios.defaults.withCredentials = true;
     // Sidebar Responsive Handler
     const handleToggle = () => {
         setActive(!isActive)
     }
+
+    // logout handler
+    const handleLogout = () => {
+        Axios.get('http://localhost:5000/auth/logout')
+            .then(res => {
+                if (res.data.status) {
+                    navigate('/login')
+                }
+            }).catch(err => {
+                console.log(err);
+            })
+    }
+
     return (
         <>
             {/* Small Screen Navbar */}
@@ -71,9 +88,8 @@ const Sidebar = () => {
                         label='Profile'
                         address='/dashboard/profile'
                     />
-                    <button className='flex w-full items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform'>
+                    <button onClick={handleLogout} className='flex w-full items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform'>
                         <GrLogout className='w-5 h-5' />
-
                         <span className='mx-4 font-medium'>Logout</span>
                     </button>
                 </div>

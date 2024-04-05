@@ -2,6 +2,7 @@ import { useNavigate, Outlet } from 'react-router-dom';
 import Sidebar from '../components/Dashboard/Sidebar/Sidebar';
 import { useEffect } from 'react';
 import Axios from 'axios'
+import Swal from 'sweetalert2'
 
 const DashboardLayout = () => {
     const navigate = useNavigate();
@@ -10,9 +11,20 @@ const DashboardLayout = () => {
         Axios.get('http://localhost:5000/auth/verify')
             .then(res => {
                 if (res.data.status) {
-                    console.log('welcome to the dashboard');
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Welcome to your dashboard",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
                 } else {
-                    navigate('/')
+                    Swal.fire({
+                        title: "Login First",
+                        text: "You have to login before go to the dashboard",
+                        icon: "warning",
+                    });
+                    navigate('/login')
                 }
                 console.log(res);
             })

@@ -26,7 +26,7 @@ const Sidebar = () => {
         Axios.get('http://localhost:5000/auth/logout')
             .then(res => {
                 if (res.data.status) {
-                    navigate('/login')
+                    navigate('/')
                 }
             }).catch(err => {
                 console.log(err);

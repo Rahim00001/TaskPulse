@@ -56,6 +56,12 @@ const MenuDropdown = () => {
                         >
                             Sign Up
                         </Link>
+                        <Link
+                            to='/dashboard'
+                            className='px-4 py-3 hover:bg-green-200 transition font-semibold'
+                        >
+                            Dashboard
+                        </Link>
                     </div>
                 </div>
             )}
